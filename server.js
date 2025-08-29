@@ -25,8 +25,25 @@ function alternatingCaps(str) {
 app.post("/bfhl", (req, res) => {
   try {
     const data = req.body.data;
+
     if (!Array.isArray(data)) {
-      return res.status(400).json({ is_success: false, message: "Invalid input" });
+      return res.status(400).json({
+        is_success: false,
+        user_id: `${FULL_NAME}_${DOB}`,
+        email: EMAIL,
+        roll_number: ROLL_NUMBER,
+        message: "Invalid input. 'data' must be an array."
+      });
+    }
+
+    if (!data.every(item => typeof item === "string")) {
+      return res.status(400).json({
+        is_success: false,
+        user_id: `${FULL_NAME}_${DOB}`,
+        email: EMAIL,
+        roll_number: ROLL_NUMBER,
+        message: "Invalid input format. All elements in 'data' must be strings."
+      });
     }
 
     let odd_numbers = [];
@@ -69,7 +86,13 @@ app.post("/bfhl", (req, res) => {
 
     return res.status(200).json(response);
   } catch (err) {
-    return res.status(500).json({ is_success: false, message: err.message });
+    return res.status(500).json({
+      is_success: false,
+      user_id: `${FULL_NAME}_${DOB}`,
+      email: EMAIL,
+      roll_number: ROLL_NUMBER,
+      message: err.message
+    });
   }
 });
 
