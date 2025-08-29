@@ -30,6 +30,8 @@ This project implements a **REST API** that takes an array input and returns a s
 **Route**: `/bfhl`  
 **Expected status code for success**: `200`
 
+Response might take upto a minute due to render higher response times
+
 ### Example Request
 ```json
 {
