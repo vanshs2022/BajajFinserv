@@ -3,10 +3,10 @@ import express from "express";
 const app = express();
 app.use(express.json());
 
-const FULL_NAME = "john_doe"; 
-const DOB = "17091999";       
-const EMAIL = "john@xyz.com"; 
-const ROLL_NUMBER = "ABCD123"; 
+const FULL_NAME = "Vansh Sharma"; 
+const DOB = "16032005";       
+const EMAIL = "vansh.sharma2022@vitstudent.ac.in"; 
+const ROLL_NUMBER = "22BCE3075"; 
 
 function isNumeric(str) {
   return /^\d+$/.test(str);
