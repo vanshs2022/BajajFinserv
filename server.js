@@ -3,7 +3,7 @@ import express from "express";
 const app = express();
 app.use(express.json());
 
-const FULL_NAME = "Vansh Sharma"; 
+const FULL_NAME = "vansh_sharma"; 
 const DOB = "16032005";       
 const EMAIL = "vansh.sharma2022@vitstudent.ac.in"; 
 const ROLL_NUMBER = "22BCE3075"; 
